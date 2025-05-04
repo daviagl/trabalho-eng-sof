@@ -41,23 +41,23 @@ Route::patch("/employees/{id}", function (Request $request, $id) {
         return response()->json(['message' => 'Funcionario not found'], 404);
     }
 
-    if($employee->input('name') !== null){
+    if($request->input('name') !== null){
         $employee->name = $request->input('name');
     }
     
-    if($employee->input('cpf') !== null){
+    if($request->input('cpf') !== null){
         $employee->cpf = $request->input('cpf');
     }
 
-    if($employee->input('email') !== null){
+    if($request->input('email') !== null){
         $employee->email = $request->input('email');
     }
 
-    if($employee->input('phone') !== null){
+    if($request->input('phone') !== null){
         $employee->phone = $request->input('phone');
     }
 
-    if($employee->input('basesalary') !== null){
+    if($request->input('basesalary') !== null){
         $employee->basesalary = $request->input('basesalary');
     }
 
@@ -125,11 +125,11 @@ Route::patch("/departments/{id}", function (Request $request, $id) {
         return response()->json(['message' => 'Departamento not found'], 404);
     }
 
-    if($department->input('name') !== null){
+    if($request->input('name') !== null){
         $department->name = $request->input('name');
     }
     
-    if($department->input('description') !== null){
+    if($request->input('description') !== null){
         $department->description = $request->input('description');
     }
 
